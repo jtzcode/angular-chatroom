@@ -1,0 +1,25 @@
+{
+  "name": "angular-chatroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtzcode/angular-chatroom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtzcode/angular-chatroom/issues"
+  },
+  "homepage": "https://github.com/jtzcode/angular-chatroom#readme",
+  "dependencies": {
+    "@types/mongoose": "^5.7.36",
+    "@types/socket.io": "^2.1.11",
+    "mongoose": "^5.10.11",
+    "socket.io": "^2.3.0"
+  }
+}
