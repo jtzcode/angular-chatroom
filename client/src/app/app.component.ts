@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OauthAuthorizationService } from './services/oauth-authorization.service';
 
 @Component({
   selector: 'ngchat-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  constructor(private auth: OauthAuthorizationService) {
+    this.auth.CheckAuthentication();
+  }
+
+  ngOnInit() {
+    if (this.auth.IsAuthenticated) {
+      this.auth.ResumeSession();
+    }
+  }
 }

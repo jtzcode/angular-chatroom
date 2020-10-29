@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OauthAuthorizationService } from 'src/app/services/oauth-authorization.service';
 
 @Component({
   selector: 'ngchat-navigation',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: OauthAuthorizationService) { }
 
   ngOnInit(): void {
   }
