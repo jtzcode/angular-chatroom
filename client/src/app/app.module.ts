@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 
 import { SocketIoModule, SocketIoConfig, Socket } from 'ngx-socket-io';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { GeneralChatComponent } from './components/general-chat/general-chat.component';
+import { SecretChatComponent } from './components/secret-chat/secret-chat.component';
 
 const config: SocketIoConfig = { url: "http://localhost:3000", options: {} };
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    GeneralChatComponent,
+    SecretChatComponent
   ],
   imports: [
     BrowserModule,
