@@ -19,7 +19,7 @@ export abstract class DataAccessBase<T extends mongoose.Document> {
         });
     }
 
-    GetAll(conditions: any, fields: unknown): Promise<unknown[]> {
+    GetAll(conditions: any, fields: unknown): Promise<any[]> {
         return new Promise<T[]>((callback, error) => {
             this.model.find(conditions, fields, (err: unknown, result: any[]) => {
                 if (err) {
