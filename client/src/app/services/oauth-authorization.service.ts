@@ -19,7 +19,7 @@ export class OauthAuthorizationService {
       clientID: 'PAuQqfIgsu3VfEB67tgigheVr3NhhsWA',
       domain: 'dev-txia4u91.us.auth0.com',
       responseType: 'token id_token',
-      redirectUri: 'http://localhost:4200/callback',
+      redirectUri: 'http://localhost:4200/secret',
       scope: 'openid email'
     });
   }

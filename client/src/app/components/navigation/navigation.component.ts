@@ -8,7 +8,7 @@ import { OauthAuthorizationService } from 'src/app/services/oauth-authorization.
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private auth: OauthAuthorizationService) { }
+  constructor(public auth: OauthAuthorizationService) { }
 
   ngOnInit(): void {
   }

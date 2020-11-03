@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SocketIoModule, SocketIoConfig, Socket } from 'ngx-socket-io';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { GeneralChatComponent } from './components/general-chat/general-chat.component';
 import { SecretChatComponent } from './components/secret-chat/secret-chat.component';
@@ -20,7 +23,9 @@ const config: SocketIoConfig = { url: "http://localhost:3000", options: {} };
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocketIoModule.forRoot(config)
+    FormsModule,
+    SocketIoModule.forRoot(config),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

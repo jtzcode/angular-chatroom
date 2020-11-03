@@ -20,17 +20,17 @@ export class ChatMessagesService {
 
   public GetMessages = (room: string) => {
     this.JoinRoom(room);
-    return new Observable((ob) => {
+    return Observable.create((ob) => {
       this.socket.fromEvent<UserLogon>('userLogon').subscribe((user: UserLogon) => {
         ob.next(`${user.user} logged on at ${user.time}`);
-        this.socket.on('message', (msg: string) => {
-          ob.next(msg);
+      });
+      this.socket.on('message', (msg: string) => {
+        ob.next(msg);
+      });
+      this.socket.on('allMessages', (msg: string[]) => {
+        msg.forEach((text: any) => {
+          ob.next(text.messageText);
         });
-        this.socket.on('allMessages', (msg: string[]) => {
-          msg.forEach((text: any) => {
-            ob.next(text.messageText);
-          })
-        })
       });
     });
   }
